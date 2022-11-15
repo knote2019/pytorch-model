@@ -1,0 +1,6 @@
+[submodule "pytorch-cifar10"]
+	path = pytorch-cifar10
+	url = https://github.com/soapisnotfat/pytorch-cifar10.git
+[submodule "yolov5"]
+	path = yolov5
+	url = https://github.com/ultralytics/yolov5
