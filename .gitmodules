@@ -1,3 +1,6 @@
+[submodule "pytorch-cifar"]
+	path = pytorch-cifar
+	url = https://github.com/kuangliu/pytorch-cifar
 [submodule "pytorch-cifar10"]
 	path = pytorch-cifar10
 	url = https://github.com/soapisnotfat/pytorch-cifar10.git
