@@ -83,8 +83,8 @@ RUN set -x \
 && apt-get install -y mpv \
 && apt-get install -y ffmpeg \
 && echo
-ENV http_proxy=http://192.168.100.200:3128
-ENV https_proxy=http://192.168.100.200:3128
+ENV http_proxy http://192.168.100.200:3128
+ENV https_proxy http://192.168.100.200:3128
 
 #-----------------------------------------------------------------------------------------------------------------------
 RUN set -x \
