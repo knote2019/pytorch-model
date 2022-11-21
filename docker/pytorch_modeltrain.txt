@@ -1,0 +1,15 @@
+
+
+------------------------------------------------------------------------------------------------------------------------
+docker build --force-rm --tag 10.150.9.98:80/devops_tools/pytorch_modeltrain:master --file pytorch_modeltrain.dockerfile .
+
+docker login --username=admin --password=Harbor12345 10.150.9.98:80
+
+docker push 10.150.9.98:80/devops_tools/pytorch_modeltrain:master
+
+docker run -itd -e RESOLUTION=1920x1080 -p 6080:80 -v /stores/:/stores/ -v /dev/shm:/dev/shm -v /dev:/dev -v /usr/src/:/usr/src -v /lib/modules:/lib/modules --privileged --cap-add=ALL --name pytorch_modeltrain 10.150.9.98:80/devops_tools/pytorch_modeltrain:master
+
+docker exec -it pytorch_modeltrain bash
+
+登录:
+http://10.201.40.30:6080/

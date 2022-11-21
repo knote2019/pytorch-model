@@ -1,0 +1,8 @@
+
+
+export http_proxy=http://192.168.100.200:3128
+export https_proxy=http://192.168.100.200:3128
+
+cd yolov5
+python3 train.py --data data/coco128.yaml --weights yolov5s.pt
+python3 detect.py --weights runs/train/exp1/weights/best.pt --source ./data/images/bus.jpg
