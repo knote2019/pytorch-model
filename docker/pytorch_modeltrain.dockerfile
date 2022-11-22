@@ -83,8 +83,6 @@ RUN set -x \
 && apt-get install -y mpv \
 && apt-get install -y ffmpeg \
 && echo
-ENV http_proxy http://192.168.100.200:3128
-ENV https_proxy http://192.168.100.200:3128
 
 #-----------------------------------------------------------------------------------------------------------------------
 RUN set -x \
@@ -94,6 +92,8 @@ RUN set -x \
 
 #-----------------------------------------------------------------------------------------------------------------------
 RUN set -x \
+&& export http_proxy=http://192.168.100.200:3128 \
+&& export https_proxy=http://192.168.100.200:3128 \
 && git clone --recursive https://github.com/knote2019/pytorch-model \
 && pip3 install -r pytorch-model/yolov5/requirements.txt \
 && echo
